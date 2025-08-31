@@ -94,26 +94,30 @@ body {
   transform: scale(1.05) translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
-/* Media query pour les écrans de téléphone */
+/* Media query for screens on mobile devices */
 @media screen and (max-width: 768px) {
   .card-title {
-    margin-top: 10vh; /* Garde la marge supérieure ajustée pour le titre */
+    /* Reduce the top margin for the title */
+    margin-top: 5vh;
+    /* Reduce the bottom margin to bring the photo closer */
+    margin-bottom: 1vh;
+    font-size: 10vw; /* You can make the font larger here if you want it to stand out more */
   }
 
   .photo-frame {
-    /* Réduit la marge inférieure de la photo sur les petits écrans */
-    margin-bottom: 1vh; /* Au lieu de 2vh */
-    /* Vous pouvez aussi ajuster la hauteur si besoin, par exemple: */
-    height: 25vh; /* Légèrement plus petite pour un meilleur ajustement */
+    /* Reduce the height of the photo frame */
+    height: 20vh;
+    /* Reduce the margin below the photo */
+    margin-bottom: 1vh;
   }
 
   .text-content {
-    /* Ajuste la marge supérieure du contenu texte pour qu'il soit plus proche de la photo */
-    margin-top: 1vh; /* Au lieu de 2vh */
+    /* Reduce the top margin for the text content */
+    margin-top: 1vh;
   }
 
   .intro-message, .details, .rsvp-button, .rsvp-info {
-    /* Réduit l'espace entre les éléments de texte */
-    margin-bottom: 1vh; /* Au lieu de 2vh */
+    /* Reduce the spacing between text elements */
+    margin-bottom: 1vh;
   }
 }

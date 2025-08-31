@@ -1,38 +1,264 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Florine - Mes 18 ans !</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <title>Les 18 ans de Florine</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
-  <body>
+        body {
+            font-family: "Playfair Display", serif;
+            background-color: #331a4d; /* Un violet profond */
+            color: #ffd700; /* Un or scintillant */
+            margin: 0;
+            padding: 50px 20px; /* Ajoute un espacement en haut et en bas */
+            text-align: center;
+            position: relative;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+        }
+
+        /* Motifs de fond existants */
+        .background-pattern {
+            position: fixed; /* Reste en place même si on fait défiler */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><g fill="%23583C7E" fill-opacity="0.3"><path d="M0 0h20v20H0zm20 20h20v20H20zm40 0h20v20H40zm20 20h20v20H60zm-20 20h20v20H40zm20 20h20v20H60zm-20 20h20v20H40zm20 20h20v20H60zm-20 20h20v20H40zm20 20h20v20H60zm-20 20h20v20H40zm-20 20h20v20H20zm-20 20h20v20H0z"/><path d="M100 0h20v20h-20z"/><path d="M0 100h20v20H0z"/></g></svg>');
+            background-size: 100px 100px;
+            animation: moveBackground 60s linear infinite;
+            z-index: 1;
+        }
+
+        /* Nouveau motif de fond girly (petites étoiles) */
+        .girly-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><path id="star" d="M50 0L61.8 35.35L98.5 35.35L68.5 57.65L79 92.65L50 70.3L21 92.65L31.5 57.65L1.5 35.35L38.2 35.35Z"/></defs><g fill="%23FFD700" fill-opacity="0.1"><use href="%23star" transform="translate(0 0) scale(0.15)"/><use href="%23star" transform="translate(50 50) scale(0.1)"/><use href="%23star" transform="translate(20 80) scale(0.08)"/><use href="%23star" transform="translate(80 20) scale(0.12)"/></g></svg>');
+            background-size: 50px 50px; /* Taille des étoiles */
+            animation: moveBackgroundReverse 80s linear infinite; /* Animation plus lente */
+            z-index: 1;
+            opacity: 0.6; /* Un peu transparent pour ne pas surcharger */
+        }
+
+        @keyframes moveBackground {
+            from { background-position: 0 0; }
+            to { background-position: 100px 100px; }
+        }
+
+        @keyframes moveBackgroundReverse {
+            from { background-position: 0 0; }
+            to { background-position: -50px -50px; } /* Mouvement inverse */
+        }
+
+        .invitation-card {
+            background: rgba(
+                40,
+                20,
+                60,
+                0.9
+            ); /* Un peu plus opaque pour mieux faire ressortir */
+            border: 5px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px #FFD700; /* Ombre plus prononcée et lueur dorée */
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            overflow: hidden; /* Important pour les reflets internes */
+        }
+
+        /* Effet de bordure glamour */
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px dashed #ffe066; /* Bordure intérieure en pointillés dorés */
+            border-radius: 15px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        h1 {
+            font-size: 3.5em; /* Un peu plus grand */
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Garde une ombre de base pour plus de lisibilité */
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Espacement des lettres */
+        }
+
+        h2 {
+            font-size: 1.8em; /* Un peu plus grand */
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            color: #ffeb99; /* Une nuance d'or plus douce */
+        }
+
+        p {
+            font-size: 1.3em; /* Un peu plus grand */
+            line-height: 1.8; /* Plus d'espace entre les lignes */
+            color: #ffeb99; /* Changement de la couleur du texte en une nuance d'or */
+        }
+
+        .text-sparkle {
+            color: #ffd700; /* Couleur or pour le texte scintillant */
+            animation: sparkle 1.5s infinite alternate; /* Animation plus douce et alternée */
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 0 0 8px #FFD700, 0 0 15px #FFD700, 0 0 25px #FFD700, 0 0 35px rgba(255, 215, 0, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 12px #FFD700, 0 0 25px #FFD700, 0 0 40px #FFD700, 0 0 50px rgba(255, 215, 0, 0.8);
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #ffe066); /* Dégradé doré */
+            color: #331a4d;
+            padding: 18px 35px; /* Plus grand */
+            border-radius: 30px; /* Plus arrondi */
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.08); /* Effet plus prononcé */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 25px #FFD700; /* Ombre et lueur plus fortes */
+            background: linear-gradient(45deg, #ffe066, #FFD700); /* Inversion du dégradé au survol */
+        }
+        
+        .florine-photo-banner {
+            width: 100%;
+            max-width: 611px;
+            height: auto;
+            border: 5px solid #FFD700; /* Bordure un peu plus épaisse */
+            border-radius: 15px; /* Un peu plus arrondi */
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.5); /* Ombre et lueur pour la photo */
+        }
+
+        /* Effet de particules (petites étoiles) flottantes */
+        .sparkle-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1; /* Sous la carte d'invitation */
+            overflow: hidden;
+        }
+
+        .sparkle-effect span {
+            position: absolute;
+            background-color: #ffd700; /* Couleur or */
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 4s infinite ease-out; /* Animation de scintillement */
+        }
+
+        @keyframes twinkle {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                transform: scale(1) rotate(45deg);
+                opacity: 1;
+            }
+            90% {
+                transform: scale(1) rotate(315deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-pattern"></div>
+    <div class="girly-pattern"></div>
+    <div class="sparkle-effect"></div>
     <div class="invitation-card">
-      <h1 class="card-title">Florine - Mes 18 ans !</h1>
-      <div class="photo-frame main-frame">
-        <img src="florine_photo.png" alt="Photo de Florine" />
-      </div>
-      <div class="text-content">
-        <p class="intro-message">
-          Vous êtes invités à célébrer mon 18ème anniversaire!
+        <h1 class="text-sparkle">Les 18 ans de Florine</h1>
+        <h2>Une soirée pour célébrer l'élégance !</h2>
+
+        <img
+            src="florine_photo.png"
+            alt="Photos de Florine"
+            class="florine-photo-banner"
+        />
+
+        <p>
+            Chers amis et famille,<br />
+            C'est avec une immense joie que je vous invite à célébrer mes 18 ans !<br />
+            Préparez-vous pour une soirée glamour et pleine de surprises.
         </p>
-        <div class="details">
-          <p>Date : 7 mars 2026</p>
-          <p>Heure : 19 heures</p>
-          <p>Lieu : Salle communale de Challet</p>
-        </div>
-<a href="mailto:denis.geo1@gmail.com?subject=Confirmation de présence&body=Bonjour,%0D%0AJe vous confirme ma présence à la fête de Florine.%0D%0ANom :%0D%0ANombre de personne :%0D%0AA bientôt." class="rsvp-button">Je participe !</a>
-        <p class="rsvp-info">
-          Merci de confirmer votre présence avant le 1er janvier 2026 à l'aide
-          du bouton ci-dessus
+
+        <p>
+            <strong class="text-sparkle">Date :</strong> Samedi 21 septembre 2025<br />
+            <strong class="text-sparkle">Heure :</strong> À partir de 19h30<br />
+            <strong class="text-sparkle">Lieu :</strong> 12, rue des Lilas, 75010 Paris
         </p>
-      </div>
+
+        <p>
+            Venez avec votre plus belle tenue pour une soirée inoubliable.<br />
+            Votre présence est le plus beau des cadeaux !
+        </p>
+
+        <a href="mailto:florine.anniversaire@email.com" class="cta-button">Confirmer ma présence</a>
+
+        <p style="margin-top: 30px">
+            Amicalement,<br />
+            Florine
+        </p>
     </div>
-  </body>
+
+    <script>
+        // Script pour générer des particules scintillantes aléatoirement
+        const sparkleEffect = document.querySelector('.sparkle-effect');
+        function createSparkle() {
+            const sparkle = document.createElement('span');
+            const size = Math.random() * 5 + 2; // Taille entre 2 et 7px
+            sparkle.style.width = `${size}px`;
+            sparkle.style.height = `${size}px`;
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 3}s`; // Délai aléatoire
+            sparkle.style.animationDuration = `${Math.random() * 3 + 2}s`; // Durée aléatoire
+            sparkleEffect.appendChild(sparkle);
+
+            // Supprime l'étincelle après son animation pour ne pas surcharger le DOM
+            sparkle.addEventListener('animationend', () => {
+                sparkle.remove();
+            });
+        }
+
+        // Génère des étincelles toutes les 100ms
+        setInterval(createSparkle, 100);
+    </script>
+</body>
 </html>

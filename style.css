@@ -97,13 +97,6 @@ body {
 /* Media query pour les écrans de téléphone */
 @media screen and (max-width: 768px) {
   .card-title {
-    /* Ajuste la marge supérieure pour les téléphones */
-    margin-top: 10vh; 
-  }
-}
-/* Media query pour les écrans de téléphone */
-@media screen and (max-width: 768px) {
-  .card-title {
     margin-top: 10vh; /* Garde la marge supérieure ajustée pour le titre */
   }
 

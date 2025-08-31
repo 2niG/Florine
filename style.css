@@ -13,7 +13,7 @@ body {
 .invitation-card {
   width: 100vw;
   height: 100vh;
-  background-image: url("fond_invitation.png");
+  background-image: url("fond_invitation1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,6 +96,9 @@ body {
 }
 /* Media query for screens on mobile devices */
 @media screen and (max-width: 768px) {
+  .invitation-card {
+    background-image: url("fond_invitation2.png");
+  }
   .card-title {
     /* Reduce the top margin for the title */
     margin-top: 5vh;
@@ -116,7 +119,10 @@ body {
     margin-top: 1vh;
   }
 
-  .intro-message, .details, .rsvp-button, .rsvp-info {
+  .intro-message,
+  .details,
+  .rsvp-button,
+  .rsvp-info {
     /* Reduce the spacing between text elements */
     margin-bottom: 1vh;
   }

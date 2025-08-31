@@ -101,3 +101,26 @@ body {
     margin-top: 10vh; 
   }
 }
+/* Media query pour les écrans de téléphone */
+@media screen and (max-width: 768px) {
+  .card-title {
+    margin-top: 10vh; /* Garde la marge supérieure ajustée pour le titre */
+  }
+
+  .photo-frame {
+    /* Réduit la marge inférieure de la photo sur les petits écrans */
+    margin-bottom: 1vh; /* Au lieu de 2vh */
+    /* Vous pouvez aussi ajuster la hauteur si besoin, par exemple: */
+    height: 25vh; /* Légèrement plus petite pour un meilleur ajustement */
+  }
+
+  .text-content {
+    /* Ajuste la marge supérieure du contenu texte pour qu'il soit plus proche de la photo */
+    margin-top: 1vh; /* Au lieu de 2vh */
+  }
+
+  .intro-message, .details, .rsvp-button, .rsvp-info {
+    /* Réduit l'espace entre les éléments de texte */
+    margin-bottom: 1vh; /* Au lieu de 2vh */
+  }
+}
